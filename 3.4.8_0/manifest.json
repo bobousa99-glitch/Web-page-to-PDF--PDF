@@ -1,0 +1,45 @@
+{
+   "action": {
+      "default_popup": "popup.html",
+      "default_title": "Web to PDF"
+   },
+   "background": {
+      "service_worker": "background.js"
+   },
+   "content_scripts": [ {
+      "css": [ "content-scripts/RemovalMode.css", "content-scripts/SelectionMode.css", "content-scripts/print.css" ],
+      "js": [ "content-scripts/RemovalMode.js", "content-scripts/SelectionMode.js", "content-scripts/guide.js", "content-scripts/ping.js", "content-scripts/print.js" ],
+      "matches": [ "\u003Call_urls>" ]
+   } ],
+   "default_locale": "en",
+   "description": "__MSG_shortDesc__",
+   "externally_connectable": {
+      "matches": [ "https://*.webtopdf.space/*" ]
+   },
+   "host_permissions": [ "\u003Call_urls>" ],
+   "icons": {
+      "128": "icon/128.png",
+      "16": "icon/16.png",
+      "256": "icon/256.png",
+      "32": "icon/32.png",
+      "48": "icon/48.png",
+      "512": "icon/512.png",
+      "64": "icon/64.png"
+   },
+   "key": "MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAzHTot2bKo20wSHEGTROVA4db0BlT1vM/n+MtNnPtVk+6sWO8t72Dm7KQZKLfVbx0k+RFIjDDH6iZH3cCSKEQsMCexWmMB6bmOqfOz3xmtdgPHZOcngdIHWNtFpVYdLbZ+CtbNfkmQsEvHKTyCI+CFy1RHT6MYNbX6I8aWlGvbRjvT5z+uzKQ/ylaqyhibfbDC/Gp3O44udTQ1/C7u6C5WDxIE327avgu5o5hvQMDsk1eyvgi3bytNXa/qZ62kU/aK7p8ZZVbTQlDb4F3d+PIWwlTibcvwsVYC+rvQfRf2Lyy/GDJyRKIsL97oMTf4o7iey046Yx9OS67eE7iMkSS4wIDAQAB",
+   "manifest_version": 3,
+   "name": "__MSG_appName__",
+   "oauth2": {
+      "client_id": "779639341106-f5vohjkrhg5k63lre7m679p52pn56pjr.apps.googleusercontent.com",
+      "scopes": [ "https://www.googleapis.com/auth/drive.file" ]
+   },
+   "options_page": "settings.html",
+   "permissions": [ "activeTab", "tabs", "scripting", "debugger", "storage", "identity" ],
+   "update_url": "https://clients2.google.com/service/update2/crx",
+   "version": "3.4.8",
+   "web_accessible_resources": [ {
+      "matches": [ "\u003Call_urls>" ],
+      "resources": [ "content-scripts/guide.css" ],
+      "use_dynamic_url": true
+   } ]
+}
